@@ -51,6 +51,8 @@
     "AUTH_STRAVA_SECRET",
     "AUTH_REDIRECT_PROXY_URL",
     "AUTH_SECRET",
+    "RESEND_API_KEY",
+    "AUTH_EMAIL_FROM",
     "PORT"
   ],
   "globalPassThroughEnv": [

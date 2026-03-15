@@ -10,6 +10,14 @@ export function authEnv() {
         process.env.NODE_ENV === "production"
           ? z.string().min(1)
           : z.string().min(1).optional(),
+      RESEND_API_KEY:
+        process.env.NODE_ENV === "production"
+          ? z.string().min(1)
+          : z.string().min(1).optional(),
+      AUTH_EMAIL_FROM:
+        process.env.NODE_ENV === "production"
+          ? z.string().min(1)
+          : z.string().min(1).optional(),
       NODE_ENV: z.enum(["development", "production"]).optional(),
     },
     runtimeEnv: process.env,
