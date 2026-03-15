@@ -15,9 +15,9 @@ export async function AuthShowcase() {
           size="lg"
           formAction={async () => {
             "use server";
-            const res = await auth.api.signInSocial({
+            const res = await auth.api.signInWithOAuth2({
               body: {
-                provider: "discord",
+                providerId: "strava",
                 callbackURL: "/",
               },
             });
@@ -27,7 +27,7 @@ export async function AuthShowcase() {
             redirect(res.url);
           }}
         >
-          Sign in with Discord
+          Sign in with Strava
         </Button>
       </form>
     );

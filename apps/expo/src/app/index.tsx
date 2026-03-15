@@ -110,14 +110,14 @@ function MobileAuth() {
         onPress={() =>
           session
             ? authClient.signOut()
-            : authClient.signIn.social({
-                provider: "discord",
+            : authClient.signIn.oauth2({
+                providerId: "strava",
                 callbackURL: "/",
               })
         }
         className="bg-primary flex items-center rounded-sm p-2"
       >
-        <Text>{session ? "Sign Out" : "Sign In With Discord"}</Text>
+        <Text>{session ? "Sign Out" : "Sign In With Strava"}</Text>
       </Pressable>
     </>
   );

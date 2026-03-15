@@ -2,7 +2,7 @@ import type { BetterAuthOptions, BetterAuthPlugin } from "better-auth";
 import { expo } from "@better-auth/expo";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
-import { oAuthProxy } from "better-auth/plugins";
+import { genericOAuth, oAuthProxy } from "better-auth/plugins";
 
 import { db } from "@acme/db/client";
 
@@ -13,8 +13,8 @@ export function initAuth<
   productionUrl: string;
   secret: string | undefined;
 
-  discordClientId: string;
-  discordClientSecret: string;
+  stravaClientId: string;
+  stravaClientSecret: string;
   extraPlugins?: TExtraPlugins;
 }) {
   const config = {
@@ -27,16 +27,40 @@ export function initAuth<
       oAuthProxy({
         productionURL: options.productionUrl,
       }),
+      genericOAuth({
+        config: [
+          {
+            providerId: "strava",
+            authorizationUrl: "https://www.strava.com/oauth/authorize",
+            tokenUrl: "https://www.strava.com/oauth/token",
+            userInfoUrl: "https://www.strava.com/api/v3/athlete",
+            clientId: options.stravaClientId,
+            clientSecret: options.stravaClientSecret,
+            redirectURI: `${options.productionUrl}/api/auth/oauth2/callback/strava`,
+            scopes: ["read", "activity:read_all"],
+            mapProfileToUser: (profile) => {
+              const firstName =
+                typeof profile.firstname === "string" ? profile.firstname : "";
+              const lastName =
+                typeof profile.lastname === "string" ? profile.lastname : "";
+              const fullName = `${firstName} ${lastName}`.trim();
+
+              return {
+                name:
+                  fullName.length > 0
+                    ? fullName
+                    : (typeof profile.username === "string"
+                        ? profile.username
+                        : "Strava User"),
+                image: typeof profile.profile === "string" ? profile.profile : undefined,
+              };
+            },
+          },
+        ],
+      }),
       expo(),
       ...(options.extraPlugins ?? []),
     ],
-    socialProviders: {
-      discord: {
-        clientId: options.discordClientId,
-        clientSecret: options.discordClientSecret,
-        redirectURI: `${options.productionUrl}/api/auth/callback/discord`,
-      },
-    },
     trustedOrigins: ["expo://"],
     onAPIError: {
       onError(error, ctx) {
