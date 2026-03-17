@@ -5,7 +5,7 @@ export default function Post() {
   return (
     <SafeAreaView className="bg-background">
       <Stack.Screen options={{ title: "Post" }} />
-      <View className="h-full w-full p-4">
+      <View className="size-full p-4">
         <Text className="text-primary py-2 text-3xl font-bold">
           This screen is no longer used
         </Text>

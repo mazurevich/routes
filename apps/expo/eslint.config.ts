@@ -5,7 +5,15 @@ import { tailwindConfig } from "@acme/eslint-config/tailwind";
 
 export default defineConfig(
   {
-    ignores: [".next/**", "dist/**", "node_modules/**"],
+    ignores: [
+      ".cache/**",
+      ".expo/**",
+      ".turbo/**",
+      "android/**",
+      "dist/**",
+      "ios/**",
+      "node_modules/**",
+    ],
     linterOptions: {
       reportUnusedDisableDirectives: false,
     },

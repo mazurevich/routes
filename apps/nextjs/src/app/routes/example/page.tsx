@@ -1,8 +1,9 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import { useState } from "react";
 import { Fredoka, Nunito } from "next/font/google";
-import { colorTokens } from "@acme/design-tokens";
+import { getColorTokens } from "@acme/design-tokens";
 import { mockRoute } from "../../_components/route-details/routeDetailsData";
 
 const fredoka = Fredoka({
@@ -17,7 +18,7 @@ const nunito = Nunito({
   variable: "--font-body",
 });
 
-const baseColors = colorTokens.light;
+const baseColors = getColorTokens("light");
 const C = {
   bg: baseColors.background,
   coral: baseColors.routeCoral,
@@ -36,15 +37,26 @@ const C = {
 };
 
 const BikeIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ width: 18, height: 18 }}>
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="size-[18px]"
+  >
     <title>Bike icon</title>
-    <circle cx="5.5" cy="17.5" r="3.5" /><circle cx="18.5" cy="17.5" r="3.5" />
-    <path d="M15 6a1 1 0 0 0-1 1v5l-3 3" /><path d="m9 17 2-5 4-1" /><path d="M7 7h5l2 4" />
+    <circle cx="5.5" cy="17.5" r="3.5" />
+    <circle cx="18.5" cy="17.5" r="3.5" />
+    <path d="M15 6a1 1 0 0 0-1 1v5l-3 3" />
+    <path d="m9 17 2-5 4-1" />
+    <path d="M7 7h5l2 4" />
   </svg>
 );
 
 const Stars = ({ rating, uid, size = 16 }: { rating: number; uid: string; size?: number }) => (
-  <div style={{ display: "flex", gap: 2 }}>
+  <div className="flex gap-0.5">
     {[1, 2, 3, 4, 5].map((i) => {
       const pct = Math.round(Math.min(100, Math.max(0, (rating - (i - 1)) * 100)));
       const id = `${uid}-${i}`;
@@ -65,7 +77,7 @@ const Stars = ({ rating, uid, size = 16 }: { rating: number; uid: string; size?:
 );
 
 const MapSVG = () => (
-  <svg viewBox="0 0 400 220" style={{ width: "100%", height: "100%", display: "block" }}>
+  <svg viewBox="0 0 400 220" className="block size-full">
     <title>Cycling route map</title>
     <rect width="400" height="220" fill="#E8F4FD" />
     {/* Friendly terrain blobs */}
@@ -95,12 +107,21 @@ const MapSVG = () => (
 );
 
 const FunStatCard = ({ label, value, color, bg, emoji }: { label: string; value: string; color: string; bg: string; emoji: string }) => (
-  <div style={{ background: bg, borderRadius: 16, padding: "14px 12px", textAlign: "center" as const, border: `2px solid ${color}22` }}>
-    <div style={{ fontSize: 22, marginBottom: 4 }}>{emoji}</div>
-    <div style={{ fontFamily: "var(--font-display)", fontSize: 20, fontWeight: 600, color, lineHeight: 1 }}>{value}</div>
-    <div style={{ fontFamily: "var(--font-body)", fontSize: 10, fontWeight: 700, color: C.muted, marginTop: 4 }}>{label}</div>
+  <div
+    className="rounded-2xl border-2 px-3 py-3.5 text-center"
+    style={{ backgroundColor: bg, borderColor: `${color}22` }}
+  >
+    <div className="mb-1 text-[22px]">{emoji}</div>
+    <div className="font-(--font-display) text-[20px] leading-none" style={{ color, fontWeight: 600 }}>
+      {value}
+    </div>
+    <div className="mt-1 text-[10px] font-[var(--font-body)] font-bold" style={{ color: C.muted }}>
+      {label}
+    </div>
   </div>
 );
+
+const panelClass = "mb-3 rounded-[20px] bg-[var(--route-surface)] p-4 shadow-[0_2px_12px_rgba(0,0,0,0.06)]";
 
 const NAV_TABS = [
   { id: "home", label: "Home", d: "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z", color: C.purple },
@@ -115,48 +136,68 @@ export default function RouteExamplePage() {
   const [comment, setComment] = useState(mockRoute.defaultComment);
   const [draft, setDraft] = useState(comment);
 
-  const handleEditStart = () => { setDraft(comment); setIsEditing(true); };
-  const handleSave = () => { setComment(draft); setIsEditing(false); };
-  const handleCancel = () => { setIsEditing(false); setDraft(comment); };
+  const handleEditStart = () => {
+    setDraft(comment);
+    setIsEditing(true);
+  };
+  const handleSave = () => {
+    setComment(draft);
+    setIsEditing(false);
+  };
+  const handleCancel = () => {
+    setIsEditing(false);
+    setDraft(comment);
+  };
 
-  const fd = { fontFamily: "var(--font-display)" };
-  const fb = { fontFamily: "var(--font-body)" };
+  const themeVars = {
+    "--route-bg": C.bg,
+    "--route-coral": C.coral,
+    "--route-coral-light": C.coralLight,
+    "--route-teal": C.teal,
+    "--route-teal-light": C.tealLight,
+    "--route-yellow": C.yellow,
+    "--route-yellow-light": C.yellowLight,
+    "--route-purple": C.purple,
+    "--route-purple-light": C.purpleLight,
+    "--route-dark": C.dark,
+    "--route-mid": C.mid,
+    "--route-muted": C.muted,
+    "--route-border": C.border,
+    "--route-surface": C.surface,
+  } as CSSProperties;
 
   return (
-    <div className={`${fredoka.variable} ${nunito.variable}`} style={{ minHeight: "100vh", background: "#D6EAF8", display: "flex", justifyContent: "center" }}>
-      <div style={{ width: "100%", maxWidth: 390, background: C.bg, minHeight: "100vh", paddingBottom: 88 }}>
-
-        {/* Colorful header */}
-        <div style={{ background: `linear-gradient(135deg, ${C.coral}, ${C.teal})`, padding: "14px 16px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, color: "white", ...fd, fontSize: 16, fontWeight: 600 }}>
+    <div className={`${fredoka.variable} ${nunito.variable} flex min-h-screen justify-center bg-[var(--route-border)]`} style={themeVars}>
+      <div className="relative min-h-screen w-full max-w-[390px] bg-[var(--route-bg)] pb-[88px]">
+        <div className="flex items-center justify-between bg-[linear-gradient(135deg,var(--route-coral),var(--route-teal))] px-4 py-3.5">
+          <div className="flex items-center gap-2 text-base font-[var(--font-display)] font-semibold text-white">
             <BikeIcon />
             Cycling
           </div>
-          <span style={{ ...fb, fontSize: 11, color: "rgba(255,255,255,0.8)", fontWeight: 600 }}>Route Example · Social</span>
+          <span className="text-[11px] font-[var(--font-body)] font-semibold text-white/80">Route Example · Social</span>
         </div>
 
-        {/* Map with rounded corners */}
-        <div style={{ margin: "12px 12px 0", borderRadius: 20, overflow: "hidden", border: "3px solid white", boxShadow: "0 4px 20px rgba(0,0,0,0.1)" }}>
+        <div className="mx-3 mt-3 overflow-hidden rounded-[20px] border-[3px] border-white shadow-[0_4px_20px_rgba(0,0,0,0.1)]">
           <MapSVG />
         </div>
 
-        <div style={{ padding: "16px 14px 0" }}>
-          <div style={{ background: C.surface, borderRadius: 20, padding: 16, marginBottom: 12, boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
-            <h1 style={{ ...fd, fontSize: 26, fontWeight: 600, color: C.dark, margin: "0 0 4px" }}>
+        <div className="px-[14px] pt-4">
+          <div className={panelClass}>
+            <h1 className="mb-1 text-[26px] font-[var(--font-display)] font-semibold text-[var(--route-dark)]">
               {mockRoute.title} 🚵
             </h1>
-            <p style={{ ...fb, fontSize: 13, color: C.muted, margin: 0 }}>{mockRoute.date}</p>
+            <p className="text-[13px] font-[var(--font-body)] text-[var(--route-muted)]">{mockRoute.date}</p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginBottom: 12 }}>
+          <div className="mb-3 grid grid-cols-3 gap-2">
             <FunStatCard label="Distance" value={mockRoute.stats.distance} color={C.teal} bg={C.tealLight} emoji="📍" />
             <FunStatCard label="Time" value={mockRoute.stats.duration} color={C.coral} bg={C.coralLight} emoji="⏱" />
             <FunStatCard label="Climbed" value={mockRoute.stats.elevation} color={C.purple} bg={C.purpleLight} emoji="⛰" />
           </div>
 
-          <div style={{ background: C.surface, borderRadius: 20, padding: 16, marginBottom: 12, boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
-            <div style={{ ...fd, fontSize: 18, fontWeight: 600, color: C.dark, marginBottom: 12 }}>💪 Your Stats</div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+          <div className={panelClass}>
+            <div className="mb-3 text-lg font-[var(--font-display)] font-semibold text-[var(--route-dark)]">💪 Your Stats</div>
+            <div className="grid grid-cols-2 gap-2">
               {[
                 { label: "Avg Power", value: mockRoute.stats.avgPower, color: C.coral },
                 { label: "Norm. Power", value: mockRoute.stats.normalizedPower, color: C.teal },
@@ -167,76 +208,130 @@ export default function RouteExamplePage() {
                 { label: "Calories 🔥", value: mockRoute.stats.calories, color: C.yellow },
                 { label: "TSS Score", value: mockRoute.stats.tss, color: C.teal },
               ].map((s, i) => (
-                <div key={i} style={{ background: C.bg, borderRadius: 12, padding: "10px 12px", display: "flex", justifyContent: "space-between", alignItems: "center", border: `1px solid ${C.border}` }}>
-                  <span style={{ ...fb, fontSize: 11, fontWeight: 600, color: C.muted }}>{s.label}</span>
-                  <span style={{ ...fd, fontSize: 15, fontWeight: 600, color: s.color }}>{s.value}</span>
+                <div
+                  key={i}
+                  className="flex items-center justify-between rounded-xl border bg-[var(--route-bg)] px-3 py-2.5"
+                  style={{ borderColor: C.border }}
+                >
+                  <span className="text-[11px] font-[var(--font-body)] font-semibold text-[var(--route-muted)]">{s.label}</span>
+                  <span className="text-[15px] font-[var(--font-display)] font-semibold" style={{ color: s.color }}>
+                    {s.value}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div style={{ background: C.surface, borderRadius: 20, padding: 16, marginBottom: 12, boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
-            <div style={{ ...fd, fontSize: 18, fontWeight: 600, color: C.dark, marginBottom: 12 }}>⭐ How was it?</div>
-            <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 14, background: C.yellowLight, borderRadius: 14, padding: "12px 14px" }}>
-              <div style={{ ...fd, fontSize: 48, fontWeight: 600, color: C.coral, lineHeight: 1 }}>{mockRoute.rating}</div>
+          <div className={panelClass}>
+            <div className="mb-3 text-lg font-[var(--font-display)] font-semibold text-[var(--route-dark)]">⭐ How was it?</div>
+            <div className="mb-3.5 flex items-center gap-4 rounded-[14px] bg-[var(--route-yellow-light)] px-[14px] py-3">
+              <div className="text-5xl font-[var(--font-display)] font-semibold leading-none text-[var(--route-coral)]">
+                {mockRoute.rating}
+              </div>
               <div>
                 <Stars rating={mockRoute.rating} uid="m9" size={22} />
-                <div style={{ ...fb, fontSize: 12, color: C.muted, marginTop: 4, fontWeight: 600 }}>{mockRoute.ratingCount} reviews</div>
+                <div className="mt-1 text-xs font-[var(--font-body)] font-semibold text-[var(--route-muted)]">
+                  {mockRoute.ratingCount} reviews
+                </div>
               </div>
             </div>
             {mockRoute.reviews.map((r, ri) => (
-              <div key={ri} style={{ background: C.bg, borderRadius: 14, padding: 12, marginBottom: 8, border: `1px solid ${C.border}` }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
-                  <div style={{ width: 36, height: 36, borderRadius: "50%", background: `linear-gradient(135deg, ${C.coral}, ${C.teal})`, display: "flex", alignItems: "center", justifyContent: "center", ...fb, fontSize: 12, fontWeight: 800, color: "white" }}>{r.initials}</div>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ ...fd, fontSize: 14, fontWeight: 600, color: C.dark }}>{r.author}</div>
-                    <div style={{ ...fb, fontSize: 11, color: C.muted }}>{r.date}</div>
+              <div
+                key={ri}
+                className="mb-2 rounded-[14px] border bg-[var(--route-bg)] p-3"
+                style={{ borderColor: C.border }}
+              >
+                <div className="mb-1.5 flex items-center gap-2.5">
+                  <div className="flex size-9 items-center justify-center rounded-full bg-[linear-gradient(135deg,var(--route-coral),var(--route-teal))] text-xs font-[var(--font-body)] font-extrabold text-white">
+                    {r.initials}
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-sm font-[var(--font-display)] font-semibold text-[var(--route-dark)]">{r.author}</div>
+                    <div className="text-[11px] font-[var(--font-body)] text-[var(--route-muted)]">{r.date}</div>
                   </div>
                   <Stars rating={r.rating} uid={`r9-${ri}`} size={14} />
                 </div>
-                <p style={{ ...fb, fontSize: 13, color: C.mid, margin: 0, lineHeight: 1.5 }}>{r.text}</p>
+                <p className="text-[13px] font-[var(--font-body)] font-medium leading-normal text-[var(--route-mid)]">{r.text}</p>
               </div>
             ))}
           </div>
 
-          <div style={{ background: C.surface, borderRadius: 20, padding: 16, marginBottom: 12, boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-              <div style={{ ...fd, fontSize: 18, fontWeight: 600, color: C.dark }}>✏️ My Note</div>
+          <div className={panelClass}>
+            <div className="mb-3 flex items-center justify-between">
+              <div className="text-lg font-[var(--font-display)] font-semibold text-[var(--route-dark)]">✏️ My Note</div>
               {!isEditing && (
-                <button type="button" onClick={handleEditStart} aria-label="Edit note" style={{ ...fb, fontSize: 12, fontWeight: 700, color: "white", background: C.teal, border: "none", borderRadius: 20, padding: "6px 16px", cursor: "pointer" }}>Edit</button>
+                <button
+                  type="button"
+                  onClick={handleEditStart}
+                  aria-label="Edit note"
+                  className="cursor-pointer rounded-[20px] px-4 py-1.5 text-xs font-[var(--font-body)] font-bold text-white"
+                  style={{ backgroundColor: C.teal }}
+                >
+                  Edit
+                </button>
               )}
             </div>
             {isEditing ? (
               <div>
-                <textarea value={draft} onChange={(e) => setDraft(e.target.value)} aria-label="Edit your note"
-                  style={{ ...fb, width: "100%", padding: 12, border: `2px solid ${C.teal}`, borderRadius: 14, background: C.tealLight, color: C.dark, fontSize: 14, lineHeight: 1.6, resize: "vertical" as const, minHeight: 110, outline: "none", boxSizing: "border-box" as const, fontWeight: 500 }} />
-                <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
-                  <button type="button" onClick={handleSave} aria-label="Save note" style={{ ...fb, flex: 1, padding: "12px 0", borderRadius: 14, border: "none", background: C.teal, color: "white", fontSize: 14, fontWeight: 800, cursor: "pointer" }}>
+                <textarea
+                  value={draft}
+                  onChange={(e) => setDraft(e.target.value)}
+                  aria-label="Edit your note"
+                  className="min-h-[110px] w-full resize-y rounded-[14px] border-2 bg-[var(--route-teal-light)] p-3 text-sm font-[var(--font-body)] font-medium leading-[1.6] text-[var(--route-dark)] outline-none"
+                  style={{ borderColor: C.teal }}
+                />
+                <div className="mt-2.5 flex gap-2">
+                  <button
+                    type="button"
+                    onClick={handleSave}
+                    aria-label="Save note"
+                    className="flex-1 cursor-pointer rounded-[14px] border-none py-3 text-sm font-[var(--font-body)] font-extrabold text-white"
+                    style={{ backgroundColor: C.teal }}
+                  >
                     Save
                   </button>
-                  <button type="button" onClick={handleCancel} aria-label="Cancel" style={{ ...fb, flex: 1, padding: "12px 0", borderRadius: 14, border: `2px solid ${C.border}`, background: "white", color: C.muted, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>
+                  <button
+                    type="button"
+                    onClick={handleCancel}
+                    aria-label="Cancel"
+                    className="flex-1 cursor-pointer rounded-[14px] border-2 bg-white py-3 text-sm font-[var(--font-body)] font-bold text-[var(--route-muted)]"
+                    style={{ borderColor: C.border }}
+                  >
                     Cancel
                   </button>
                 </div>
               </div>
             ) : (
-              <div style={{ background: C.tealLight, borderRadius: 14, padding: 14 }}>
-                <p style={{ ...fb, fontSize: 14, color: C.mid, margin: 0, lineHeight: 1.6, fontWeight: 500 }}>{comment}</p>
+              <div className="rounded-[14px] bg-[var(--route-teal-light)] p-[14px]">
+                <p className="text-sm font-[var(--font-body)] font-medium leading-[1.6] text-[var(--route-mid)]">{comment}</p>
               </div>
             )}
           </div>
 
-          <div style={{ background: C.surface, borderRadius: 20, padding: 16, marginBottom: 14, boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}>
-            <div style={{ ...fd, fontSize: 18, fontWeight: 600, color: C.dark, marginBottom: 12 }}>👥 Your Crew</div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+          <div className="mb-[14px] rounded-[20px] bg-[var(--route-surface)] p-4 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
+            <div className="mb-3 text-lg font-[var(--font-display)] font-semibold text-[var(--route-dark)]">👥 Your Crew</div>
+            <div className="grid grid-cols-2 gap-2">
               {mockRoute.friends.map((f) => (
-                <div key={f.id} style={{ borderRadius: 16, padding: 12, background: C.bg, border: `2px solid ${C.border}`, display: "flex", flexDirection: "column" as const, alignItems: "center", gap: 6, textAlign: "center" as const }}>
-                  <div style={{ width: 44, height: 44, borderRadius: "50%", background: f.color, display: "flex", alignItems: "center", justifyContent: "center", ...fb, fontSize: 14, fontWeight: 800, color: "white", boxShadow: `0 3px 10px ${f.color}55` }}>{f.initials}</div>
-                  <div style={{ ...fd, fontSize: 13, fontWeight: 600, color: C.dark }}>{f.name.split(" ")[0]}</div>
+                <div
+                  key={f.id}
+                  className="flex flex-col items-center gap-1.5 rounded-2xl border-2 bg-[var(--route-bg)] p-3 text-center"
+                  style={{ borderColor: C.border }}
+                >
+                  <div
+                    className="flex size-11 items-center justify-center rounded-full text-sm font-[var(--font-body)] font-extrabold text-white"
+                    style={{ backgroundColor: f.color, boxShadow: `0 3px 10px ${f.color}55` }}
+                  >
+                    {f.initials}
+                  </div>
+                  <div className="text-[13px] font-[var(--font-display)] font-semibold text-[var(--route-dark)]">
+                    {f.name.split(" ")[0]}
+                  </div>
                   {f.status === "in-progress" ? (
-                    <span style={{ ...fb, fontSize: 11, fontWeight: 800, color: C.coral, background: C.coralLight, padding: "3px 10px", borderRadius: 20 }}>Live</span>
+                    <span className="rounded-[20px] bg-[var(--route-coral-light)] px-2.5 py-[3px] text-[11px] font-[var(--font-body)] font-extrabold text-[var(--route-coral)]">
+                      Live
+                    </span>
                   ) : (
-                    <span style={{ ...fd, fontSize: 15, fontWeight: 600, color: C.teal }}>{f.time}</span>
+                    <span className="text-[15px] font-[var(--font-display)] font-semibold text-[var(--route-teal)]">{f.time}</span>
                   )}
                 </div>
               ))}
@@ -244,21 +339,51 @@ export default function RouteExamplePage() {
           </div>
         </div>
 
-        <nav style={{ position: "fixed", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "100%", maxWidth: 390, background: "white", borderTop: `2px solid ${C.border}`, display: "flex", justifyContent: "space-around", padding: "8px 0 10px", zIndex: 50, boxShadow: "0 -4px 20px rgba(0,0,0,0.08)" }}>
+        <nav
+          className="fixed bottom-0 left-1/2 z-50 flex w-full max-w-[390px] -translate-x-1/2 justify-around bg-white px-0 py-2 pb-2.5 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]"
+          style={{ borderTop: `2px solid ${C.border}` }}
+        >
           {NAV_TABS.map((tab) => {
             const active = tab.id === "activity";
             return (
-              <button type="button" key={tab.id} aria-label={tab.label} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 3, background: "none", border: "none", cursor: "pointer", padding: "2px 8px" }}>
-                <div style={{ width: 36, height: 36, borderRadius: 12, background: active ? `${tab.color}20` : "transparent", display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.15s" }}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={active ? tab.color : C.muted} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <button
+                type="button"
+                key={tab.id}
+                aria-label={tab.label}
+                className="flex cursor-pointer flex-col items-center gap-[3px] bg-transparent px-2 py-0.5"
+              >
+                <div
+                  className="flex size-9 items-center justify-center rounded-xl transition-all duration-150"
+                  style={{ backgroundColor: active ? `${tab.color}20` : "transparent" }}
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke={active ? tab.color : C.muted}
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <title>{`${tab.label} tab icon`}</title>
                     <path d={tab.d} />
-                    {tab.id === "friends" && <><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>}
+                    {tab.id === "friends" && (
+                      <>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                      </>
+                    )}
                     {tab.id === "routes" && <circle cx="12" cy="10" r="3" />}
                     {tab.id === "home" && <path d="M9 22V12h6v10" />}
                   </svg>
                 </div>
-                <span style={{ ...fb, fontSize: 10, color: active ? tab.color : C.muted, fontWeight: active ? 700 : 400 }}>{tab.label}</span>
+                <span
+                  className="text-[10px] font-[var(--font-body)]"
+                  style={{ color: active ? tab.color : C.muted, fontWeight: active ? 700 : 400 }}
+                >
+                  {tab.label}
+                </span>
               </button>
             );
           })}

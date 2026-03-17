@@ -33,7 +33,7 @@ export default function Index() {
     <SafeAreaView className="bg-background">
       {/* Changes page title visible on the header */}
       <Stack.Screen options={{ title: "Bike Routes" }} />
-      <View className="bg-background h-full w-full p-4">
+      <View className="bg-background size-full p-4">
         <Text className="text-foreground pb-2 text-center text-4xl font-bold">
           Bike <Text className="text-primary">Routes</Text>
         </Text>

@@ -5,7 +5,9 @@
   "exports": {
     "./base": "./base.ts",
     "./nextjs": "./nextjs.ts",
-    "./react": "./react.ts"
+    "./react": "./react.ts",
+    "./tailwind": "./tailwind.ts",
+    "./react-compiler": "./react-compiler.ts"
   },
   "scripts": {
     "clean": "git clean -xdf .cache .turbo node_modules",
@@ -19,8 +21,11 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-compiler": "19.1.0-rc.2",
     "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-tailwindcss": "3.18.2",
     "eslint-plugin-turbo": "^2.5.8",
+    "tailwindcss": "^3.4.19",
     "typescript-eslint": "^8.46.2"
   },
   "devDependencies": {

@@ -11,6 +11,7 @@
     "ios": "expo run:ios",
     "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path .prettierignore",
     "lint": "eslint --flag unstable_native_nodejs_ts_config",
+    "lint:eslint": "eslint --flag unstable_native_nodejs_ts_config \"src/**/*.{js,jsx,ts,tsx}\"",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
