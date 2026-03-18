@@ -4,8 +4,8 @@ import { shadowTokens } from "./shadows";
 import { spacingTokens } from "./spacing";
 import { typographyTokens } from "./typography";
 
-export { colorTokens, radiusTokens, shadowTokens, spacingTokens, typographyTokens };
 export type { ThemeMode };
+export { colorTokens, radiusTokens, shadowTokens, spacingTokens, typographyTokens };
 
 export const designTokens = {
   colors: colorTokens,

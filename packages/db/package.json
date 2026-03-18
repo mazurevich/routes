@@ -21,7 +21,7 @@
     "build": "tsc",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "dev": "tsc",
-    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "format": "biome format .",
     "lint": "eslint --flag unstable_native_nodejs_ts_config",
     "push": "pnpm with-env drizzle-kit push",
     "studio": "pnpm with-env drizzle-kit studio",
@@ -36,13 +36,10 @@
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
-    "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "@types/node": "catalog:",
     "drizzle-kit": "^0.31.5",
     "eslint": "catalog:",
-    "prettier": "catalog:",
     "typescript": "catalog:"
-  },
-  "prettier": "@acme/prettier-config"
+  }
 }

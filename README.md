@@ -61,8 +61,6 @@ packages
 tooling
   ├─ eslint
   │   └─ shared, fine-grained, eslint presets
-  ├─ prettier
-  │   └─ shared prettier configuration
   ├─ tailwind
   │   └─ shared tailwind theme and configuration
   └─ typescript

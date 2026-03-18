@@ -1,22 +1,8 @@
 "use client";
 
-import type { CSSProperties } from "react";
-import { useState } from "react";
-import { Fredoka, Nunito } from "next/font/google";
 import { getColorTokens } from "@acme/design-tokens";
+import { useState } from "react";
 import { mockRoute } from "../../_components/route-details/routeDetailsData";
-
-const fredoka = Fredoka({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-display",
-});
-
-const nunito = Nunito({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-body",
-});
 
 const baseColors = getColorTokens("light");
 const C = {
@@ -69,7 +55,10 @@ const Stars = ({ rating, uid, size = 16 }: { rating: number; uid: string; size?:
               <stop offset={`${pct}%`} stopColor={C.border} />
             </linearGradient>
           </defs>
-          <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill={`url(#${id})`} />
+          <polygon
+            points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+            fill={`url(#${id})`}
+          />
         </svg>
       );
     })}
@@ -85,34 +74,71 @@ const MapSVG = () => (
     <ellipse cx="220" cy="90" rx="120" ry="70" fill="#BEE0F7" />
     <ellipse cx="240" cy="60" rx="90" ry="55" fill="#A8D4F4" />
     {/* Dotted grid — playful */}
-    {[55, 110, 165].map((y) => [80, 160, 240, 320].map((x) => (
-      <circle key={`${x}-${y}`} cx={x} cy={y} r="1.5" fill="#90C8E8" opacity="0.5" />
-    )))}
+    {[55, 110, 165].map((y) =>
+      [80, 160, 240, 320].map((x) => (
+        <circle key={`${x}-${y}`} cx={x} cy={y} r="1.5" fill="#90C8E8" opacity="0.5" />
+      )),
+    )}
     {/* Route path */}
-    <path d="M 44 202 C 68 198 90 192 108 180 C 126 168 132 154 140 141 C 148 128 162 121 170 108 C 178 95 171 80 180 68 C 189 56 202 49 218 41 C 228 36 240 32 254 27"
-      stroke="white" strokeWidth="8" fill="none" strokeLinecap="round" opacity="0.8" />
-    <path d="M 44 202 C 68 198 90 192 108 180 C 126 168 132 154 140 141 C 148 128 162 121 170 108 C 178 95 171 80 180 68 C 189 56 202 49 218 41 C 228 36 240 32 254 27"
-      stroke={C.coral} strokeWidth="4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    <path
+      d="M 44 202 C 68 198 90 192 108 180 C 126 168 132 154 140 141 C 148 128 162 121 170 108 C 178 95 171 80 180 68 C 189 56 202 49 218 41 C 228 36 240 32 254 27"
+      stroke="white"
+      strokeWidth="8"
+      fill="none"
+      strokeLinecap="round"
+      opacity="0.8"
+    />
+    <path
+      d="M 44 202 C 68 198 90 192 108 180 C 126 168 132 154 140 141 C 148 128 162 121 170 108 C 178 95 171 80 180 68 C 189 56 202 49 218 41 C 228 36 240 32 254 27"
+      stroke={C.coral}
+      strokeWidth="4"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
     {/* Fun markers */}
     <circle cx="44" cy="202" r="9" fill="white" stroke={C.teal} strokeWidth="2.5" />
-    <text x="44" y="207" textAnchor="middle" fontSize="10" fill={C.teal}>🚴</text>
+    <text x="44" y="207" textAnchor="middle" fontSize="10" fill={C.teal}>
+      🚴
+    </text>
     <circle cx="254" cy="27" r="9" fill={C.yellow} stroke="white" strokeWidth="2.5" />
-    <text x="254" y="32" textAnchor="middle" fontSize="10">⛰</text>
+    <text x="254" y="32" textAnchor="middle" fontSize="10">
+      ⛰
+    </text>
     {/* Km dots along route */}
     <circle cx="108" cy="180" r="4" fill="white" stroke={C.coral} strokeWidth="2" />
     <circle cx="170" cy="108" r="4" fill="white" stroke={C.coral} strokeWidth="2" />
-    <text x="32" y="216" fontSize="8" fill={C.teal} fontFamily="sans-serif" fontWeight="600">Start!</text>
-    <text x="240" y="17" fontSize="8" fill={C.coral} fontFamily="sans-serif" fontWeight="600">Summit! 🎉</text>
+    <text x="32" y="216" fontSize="8" fill={C.teal} fontFamily="sans-serif" fontWeight="600">
+      Start!
+    </text>
+    <text x="240" y="17" fontSize="8" fill={C.coral} fontFamily="sans-serif" fontWeight="600">
+      Summit! 🎉
+    </text>
   </svg>
 );
 
-const FunStatCard = ({ label, value, color, bg, emoji }: { label: string; value: string; color: string; bg: string; emoji: string }) => (
+const FunStatCard = ({
+  label,
+  value,
+  color,
+  bg,
+  emoji,
+}: {
+  label: string;
+  value: string;
+  color: string;
+  bg: string;
+  emoji: string;
+}) => (
   <div
     className="rounded-2xl border-2 px-3 py-3.5 text-center"
     style={{ backgroundColor: bg, borderColor: `${color}22` }}
   >
     <div className="mb-1 text-[22px]">{emoji}</div>
-    <div className="font-(--font-display) text-[20px] leading-none" style={{ color, fontWeight: 600 }}>
+    <div
+      className="font-(--font-display) text-[20px] leading-none"
+      style={{ color, fontWeight: 600 }}
+    >
       {value}
     </div>
     <div className="mt-1 text-[10px] font-[var(--font-body)] font-bold" style={{ color: C.muted }}>
@@ -121,14 +147,35 @@ const FunStatCard = ({ label, value, color, bg, emoji }: { label: string; value:
   </div>
 );
 
-const panelClass = "mb-3 rounded-[20px] bg-[var(--route-surface)] p-4 shadow-[0_2px_12px_rgba(0,0,0,0.06)]";
+const panelClass =
+  "mb-3 rounded-[20px] bg-[var(--route-surface)] p-4 shadow-[0_2px_12px_rgba(0,0,0,0.06)]";
 
 const NAV_TABS = [
-  { id: "home", label: "Home", d: "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z", color: C.purple },
-  { id: "routes", label: "Explore", d: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z", color: C.teal },
+  {
+    id: "home",
+    label: "Home",
+    d: "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z",
+    color: C.purple,
+  },
+  {
+    id: "routes",
+    label: "Explore",
+    d: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z",
+    color: C.teal,
+  },
   { id: "activity", label: "Activity", d: "M22 12h-4l-3 9L9 3l-3 9H2", color: C.coral },
-  { id: "friends", label: "Friends", d: "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2", color: "#EC4899" },
-  { id: "more", label: "More", d: "M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01", color: C.muted },
+  {
+    id: "friends",
+    label: "Friends",
+    d: "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2",
+    color: "#EC4899",
+  },
+  {
+    id: "more",
+    label: "More",
+    d: "M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01",
+    color: C.muted,
+  },
 ];
 
 export default function RouteExamplePage() {
@@ -149,32 +196,17 @@ export default function RouteExamplePage() {
     setDraft(comment);
   };
 
-  const themeVars = {
-    "--route-bg": C.bg,
-    "--route-coral": C.coral,
-    "--route-coral-light": C.coralLight,
-    "--route-teal": C.teal,
-    "--route-teal-light": C.tealLight,
-    "--route-yellow": C.yellow,
-    "--route-yellow-light": C.yellowLight,
-    "--route-purple": C.purple,
-    "--route-purple-light": C.purpleLight,
-    "--route-dark": C.dark,
-    "--route-mid": C.mid,
-    "--route-muted": C.muted,
-    "--route-border": C.border,
-    "--route-surface": C.surface,
-  } as CSSProperties;
-
   return (
-    <div className={`${fredoka.variable} ${nunito.variable} flex min-h-screen justify-center bg-[var(--route-border)]`} style={themeVars}>
-      <div className="relative min-h-screen w-full max-w-[390px] bg-[var(--route-bg)] pb-[88px]">
+    <div className="bg-(--route-border) flex min-h-screen justify-center">
+      <div className="bg-(--route-bg) relative min-h-screen w-full max-w-[390px] pb-[88px]">
         <div className="flex items-center justify-between bg-[linear-gradient(135deg,var(--route-coral),var(--route-teal))] px-4 py-3.5">
-          <div className="flex items-center gap-2 text-base font-[var(--font-display)] font-semibold text-white">
+          <div className="font-(--font-display) flex items-center gap-2 text-base  text-white">
             <BikeIcon />
             Cycling
           </div>
-          <span className="text-[11px] font-[var(--font-body)] font-semibold text-white/80">Route Example · Social</span>
+          <span className="font-(--font-body) text-[11px]  text-white/80">
+            Route Example · Social
+          </span>
         </div>
 
         <div className="mx-3 mt-3 overflow-hidden rounded-[20px] border-[3px] border-white shadow-[0_4px_20px_rgba(0,0,0,0.1)]">
@@ -186,17 +218,39 @@ export default function RouteExamplePage() {
             <h1 className="mb-1 text-[26px] font-[var(--font-display)] font-semibold text-[var(--route-dark)]">
               {mockRoute.title} 🚵
             </h1>
-            <p className="text-[13px] font-[var(--font-body)] text-[var(--route-muted)]">{mockRoute.date}</p>
+            <p className="text-[13px] font-[var(--font-body)] text-[var(--route-muted)]">
+              {mockRoute.date}
+            </p>
           </div>
 
           <div className="mb-3 grid grid-cols-3 gap-2">
-            <FunStatCard label="Distance" value={mockRoute.stats.distance} color={C.teal} bg={C.tealLight} emoji="📍" />
-            <FunStatCard label="Time" value={mockRoute.stats.duration} color={C.coral} bg={C.coralLight} emoji="⏱" />
-            <FunStatCard label="Climbed" value={mockRoute.stats.elevation} color={C.purple} bg={C.purpleLight} emoji="⛰" />
+            <FunStatCard
+              label="Distance"
+              value={mockRoute.stats.distance}
+              color={C.teal}
+              bg={C.tealLight}
+              emoji="📍"
+            />
+            <FunStatCard
+              label="Time"
+              value={mockRoute.stats.duration}
+              color={C.coral}
+              bg={C.coralLight}
+              emoji="⏱"
+            />
+            <FunStatCard
+              label="Climbed"
+              value={mockRoute.stats.elevation}
+              color={C.purple}
+              bg={C.purpleLight}
+              emoji="⛰"
+            />
           </div>
 
           <div className={panelClass}>
-            <div className="mb-3 text-lg font-[var(--font-display)] font-semibold text-[var(--route-dark)]">💪 Your Stats</div>
+            <div className="mb-3 text-lg font-[var(--font-display)] font-semibold text-[var(--route-dark)]">
+              💪 Your Stats
+            </div>
             <div className="grid grid-cols-2 gap-2">
               {[
                 { label: "Avg Power", value: mockRoute.stats.avgPower, color: C.coral },
@@ -213,8 +267,13 @@ export default function RouteExamplePage() {
                   className="flex items-center justify-between rounded-xl border bg-[var(--route-bg)] px-3 py-2.5"
                   style={{ borderColor: C.border }}
                 >
-                  <span className="text-[11px] font-[var(--font-body)] font-semibold text-[var(--route-muted)]">{s.label}</span>
-                  <span className="text-[15px] font-[var(--font-display)] font-semibold" style={{ color: s.color }}>
+                  <span className="text-[11px] font-[var(--font-body)] font-semibold text-[var(--route-muted)]">
+                    {s.label}
+                  </span>
+                  <span
+                    className="text-[15px] font-[var(--font-display)] font-semibold"
+                    style={{ color: s.color }}
+                  >
                     {s.value}
                   </span>
                 </div>
@@ -223,7 +282,9 @@ export default function RouteExamplePage() {
           </div>
 
           <div className={panelClass}>
-            <div className="mb-3 text-lg font-[var(--font-display)] font-semibold text-[var(--route-dark)]">⭐ How was it?</div>
+            <div className="mb-3 text-lg font-[var(--font-display)] font-semibold text-[var(--route-dark)]">
+              ⭐ How was it?
+            </div>
             <div className="mb-3.5 flex items-center gap-4 rounded-[14px] bg-[var(--route-yellow-light)] px-[14px] py-3">
               <div className="text-5xl font-[var(--font-display)] font-semibold leading-none text-[var(--route-coral)]">
                 {mockRoute.rating}
@@ -246,19 +307,27 @@ export default function RouteExamplePage() {
                     {r.initials}
                   </div>
                   <div className="flex-1">
-                    <div className="text-sm font-[var(--font-display)] font-semibold text-[var(--route-dark)]">{r.author}</div>
-                    <div className="text-[11px] font-[var(--font-body)] text-[var(--route-muted)]">{r.date}</div>
+                    <div className="text-sm font-[var(--font-display)] font-semibold text-[var(--route-dark)]">
+                      {r.author}
+                    </div>
+                    <div className="text-[11px] font-[var(--font-body)] text-[var(--route-muted)]">
+                      {r.date}
+                    </div>
                   </div>
                   <Stars rating={r.rating} uid={`r9-${ri}`} size={14} />
                 </div>
-                <p className="text-[13px] font-[var(--font-body)] font-medium leading-normal text-[var(--route-mid)]">{r.text}</p>
+                <p className="text-[13px] font-[var(--font-body)] font-medium leading-normal text-[var(--route-mid)]">
+                  {r.text}
+                </p>
               </div>
             ))}
           </div>
 
           <div className={panelClass}>
             <div className="mb-3 flex items-center justify-between">
-              <div className="text-lg font-[var(--font-display)] font-semibold text-[var(--route-dark)]">✏️ My Note</div>
+              <div className="text-lg font-[var(--font-display)] font-semibold text-[var(--route-dark)]">
+                ✏️ My Note
+              </div>
               {!isEditing && (
                 <button
                   type="button"
@@ -303,13 +372,17 @@ export default function RouteExamplePage() {
               </div>
             ) : (
               <div className="rounded-[14px] bg-[var(--route-teal-light)] p-[14px]">
-                <p className="text-sm font-[var(--font-body)] font-medium leading-[1.6] text-[var(--route-mid)]">{comment}</p>
+                <p className="text-sm font-[var(--font-body)] font-medium leading-[1.6] text-[var(--route-mid)]">
+                  {comment}
+                </p>
               </div>
             )}
           </div>
 
           <div className="mb-[14px] rounded-[20px] bg-[var(--route-surface)] p-4 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
-            <div className="mb-3 text-lg font-[var(--font-display)] font-semibold text-[var(--route-dark)]">👥 Your Crew</div>
+            <div className="mb-3 text-lg font-[var(--font-display)] font-semibold text-[var(--route-dark)]">
+              👥 Your Crew
+            </div>
             <div className="grid grid-cols-2 gap-2">
               {mockRoute.friends.map((f) => (
                 <div
@@ -331,7 +404,9 @@ export default function RouteExamplePage() {
                       Live
                     </span>
                   ) : (
-                    <span className="text-[15px] font-[var(--font-display)] font-semibold text-[var(--route-teal)]">{f.time}</span>
+                    <span className="text-[15px] font-[var(--font-display)] font-semibold text-[var(--route-teal)]">
+                      {f.time}
+                    </span>
                   )}
                 </div>
               ))}

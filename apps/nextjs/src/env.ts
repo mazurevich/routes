@@ -17,7 +17,6 @@ export const env = createEnv({
    */
   server: {
     DATABASE_URL: z.url(),
-    AUTH_PRODUCTION_URL: z.url().optional(),
     AUTH_STRAVA_ID: z.string().min(1),
     AUTH_STRAVA_SECRET: z.string().min(1),
     AUTH_SECRET:
@@ -32,6 +31,8 @@ export const env = createEnv({
       process.env.NODE_ENV === "production"
         ? z.string().min(1)
         : z.string().min(1).optional(),
+    AUTH_PRODUCTION_URL:
+      process.env.NODE_ENV === "production" ? z.url() : z.url().optional(),
   },
 
   /**

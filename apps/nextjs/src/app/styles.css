@@ -20,10 +20,38 @@
 }
 
 @layer base {
+  :root {
+    --route-bg: var(--background);
+    --route-coral: var(--accent);
+    --route-coral-light: #ffe8e8;
+    --route-teal: var(--primary);
+    --route-teal-light: var(--secondary);
+    --route-yellow: var(--chart-3);
+    --route-yellow-light: #fff8e0;
+    --route-purple: var(--chart-4);
+    --route-purple-light: #f0e8ff;
+    --route-dark: var(--foreground);
+    --route-mid: #4a5568;
+    --route-muted: var(--muted-foreground);
+    --route-border: var(--border);
+    --route-surface: var(--card);
+  }
+
   * {
     @apply border-border;
   }
+
   body {
     letter-spacing: var(--tracking-normal);
+    background-color: var(--route-bg);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display), var(--font-body), system-ui, sans-serif;
   }
 }

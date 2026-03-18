@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "git clean -xdf .cache .turbo node_modules",
-    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "format": "biome format .",
     "lint": "eslint --flag unstable_native_nodejs_ts_config",
     "typecheck": "tsc --noEmit"
   },
@@ -20,12 +20,9 @@
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
-    "@acme/prettier-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "@types/node": "catalog:",
     "eslint": "catalog:",
-    "prettier": "catalog:",
     "typescript": "catalog:"
-  },
-  "prettier": "@acme/prettier-config"
+  }
 }

@@ -5,6 +5,11 @@ import Constants from "expo-constants";
  * setting the baseUrl to your production API URL.
  */
 export const getBaseUrl = () => {
+  const configuredUrl = process.env.EXPO_PUBLIC_AUTH_URL?.trim();
+  if (configuredUrl) {
+    return configuredUrl;
+  }
+
   /**
    * Gets the IP address of your host-machine. If it cannot automatically find it,
    * you'll have to manually set it. NOTE: Port 3000 should work for most but confirm
@@ -18,9 +23,7 @@ export const getBaseUrl = () => {
 
   if (!localhost) {
     // return "https://turbo.t3.gg";
-    throw new Error(
-      "Failed to get localhost. Please point to your production server.",
-    );
+    throw new Error("Failed to get localhost. Please point to your production server.");
   }
   return `http://${localhost}:3000`;
 };

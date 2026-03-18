@@ -42,9 +42,6 @@ catalogs:
     eslint:
       specifier: ^9.38.0
       version: 9.38.0
-    prettier:
-      specifier: ^3.6.2
-      version: 3.6.2
     tailwindcss:
       specifier: ^4.1.16
       version: 4.1.16
@@ -77,23 +74,17 @@ importers:
 
   .:
     devDependencies:
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:tooling/prettier
       '@biomejs/biome':
-        specifier: ^2.4.7
+        specifier: 2.4.7
         version: 2.4.7
       '@turbo/gen':
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8(@types/node@24.9.1)(typescript@5.9.3)
       dotenv-cli:
         specifier: ^10.0.0
         version: 10.0.0
-      prettier:
-        specifier: 'catalog:'
-        version: 3.6.2
       turbo:
-        specifier: ^2.5.8
+        specifier: 2.5.8
         version: 2.5.8
       typescript:
         specifier: 'catalog:'
@@ -201,9 +192,6 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../tooling/prettier
       '@acme/tailwind-config':
         specifier: workspace:*
         version: link:../../tooling/tailwind
@@ -216,9 +204,6 @@ importers:
       eslint:
         specifier: 'catalog:'
         version: 9.38.0(jiti@2.6.1)
-      prettier:
-        specifier: 'catalog:'
-        version: 3.6.2
       tailwindcss:
         specifier: 'catalog:'
         version: 4.1.16
@@ -289,9 +274,6 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../tooling/prettier
       '@acme/tailwind-config':
         specifier: workspace:*
         version: link:../../tooling/tailwind
@@ -313,9 +295,6 @@ importers:
       jiti:
         specifier: ^2.5.1
         version: 2.6.1
-      prettier:
-        specifier: 'catalog:'
-        version: 3.6.2
       tailwindcss:
         specifier: 'catalog:'
         version: 4.1.16
@@ -350,18 +329,12 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../tooling/prettier
       '@acme/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
       eslint:
         specifier: 'catalog:'
         version: 9.38.0(jiti@2.6.1)
-      prettier:
-        specifier: 'catalog:'
-        version: 3.6.2
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -390,9 +363,6 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../tooling/prettier
       '@acme/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
@@ -402,9 +372,6 @@ importers:
       eslint:
         specifier: 'catalog:'
         version: 9.38.0(jiti@2.6.1)
-      prettier:
-        specifier: 'catalog:'
-        version: 3.6.2
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -418,18 +385,12 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../tooling/prettier
       '@acme/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
       eslint:
         specifier: 'catalog:'
         version: 9.38.0(jiti@2.6.1)
-      prettier:
-        specifier: 'catalog:'
-        version: 3.6.2
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -452,9 +413,6 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../tooling/prettier
       '@acme/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
@@ -467,9 +425,6 @@ importers:
       eslint:
         specifier: 'catalog:'
         version: 9.38.0(jiti@2.6.1)
-      prettier:
-        specifier: 'catalog:'
-        version: 3.6.2
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -479,18 +434,12 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../tooling/prettier
       '@acme/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
       eslint:
         specifier: 'catalog:'
         version: 9.38.0(jiti@2.6.1)
-      prettier:
-        specifier: 'catalog:'
-        version: 3.6.2
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -516,9 +465,6 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../tooling/prettier
       '@acme/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
@@ -528,9 +474,6 @@ importers:
       eslint:
         specifier: 'catalog:'
         version: 9.38.0(jiti@2.6.1)
-      prettier:
-        specifier: 'catalog:'
-        version: 3.6.2
       react:
         specifier: catalog:react19
         version: 19.1.4
@@ -550,18 +493,12 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../tooling/prettier
       '@acme/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
       eslint:
         specifier: 'catalog:'
         version: 9.38.0(jiti@2.6.1)
-      prettier:
-        specifier: 'catalog:'
-        version: 3.6.2
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -605,9 +542,6 @@ importers:
         specifier: ^8.46.2
         version: 8.46.2(eslint@9.38.0(jiti@1.21.7))(typescript@5.9.3)
     devDependencies:
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../prettier
       '@acme/tsconfig':
         specifier: workspace:*
         version: link:../typescript
@@ -617,36 +551,11 @@ importers:
       eslint:
         specifier: 'catalog:'
         version: 9.38.0(jiti@1.21.7)
-      prettier:
-        specifier: 'catalog:'
-        version: 3.6.2
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
 
   tooling/github: {}
-
-  tooling/prettier:
-    dependencies:
-      '@ianvs/prettier-plugin-sort-imports':
-        specifier: ^4.7.0
-        version: 4.7.0(@prettier/plugin-oxc@0.0.4)(@vue/compiler-sfc@3.5.16)(content-tag@4.0.0)(prettier-plugin-ember-template-tag@2.1.0(prettier@3.6.2))(prettier@3.6.2)
-      prettier:
-        specifier: 'catalog:'
-        version: 3.6.2
-      prettier-plugin-tailwindcss:
-        specifier: ^0.7.1
-        version: 0.7.1(@ianvs/prettier-plugin-sort-imports@4.7.0(@prettier/plugin-oxc@0.0.4)(@vue/compiler-sfc@3.5.16)(content-tag@4.0.0)(prettier-plugin-ember-template-tag@2.1.0(prettier@3.6.2))(prettier@3.6.2))(@prettier/plugin-oxc@0.0.4)(prettier@3.6.2)
-    devDependencies:
-      '@acme/tsconfig':
-        specifier: workspace:*
-        version: link:../typescript
-      '@types/node':
-        specifier: 'catalog:'
-        version: 22.18.12
-      typescript:
-        specifier: 'catalog:'
-        version: 5.9.3
 
   tooling/tailwind:
     dependencies:
@@ -663,9 +572,6 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../eslint
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../prettier
       '@acme/tsconfig':
         specifier: workspace:*
         version: link:../typescript
@@ -675,9 +581,6 @@ importers:
       eslint:
         specifier: 'catalog:'
         version: 9.38.0(jiti@2.6.1)
-      prettier:
-        specifier: 'catalog:'
-        version: 3.6.2
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -1344,14 +1247,8 @@ packages:
     resolution: {integrity: sha512-XQsZgjm2EcVUiZQf11UBJQfmZeEmOW8DpI1gsFeln6w0ae0ii4dMQEQ0kjl6DspdWX1aGY1/loyXnP0JS06e/A==}
     engines: {node: '>=0.8.0'}
 
-  '@emnapi/core@1.6.0':
-    resolution: {integrity: sha512-zq/ay+9fNIJJtJiZxdTnXS20PllcYMX3OE23ESc4HK/bdYu3cOWYVhsOhVnXALfU/uqJIxn5NBPd9z4v+SfoSg==}
-
   '@emnapi/runtime@1.6.0':
     resolution: {integrity: sha512-obtUmAHTMjll499P+D9A3axeJFlhdjOWdKUNs/U6QIGT7V5RjcUW1xToAzjvmgTSQhDbYn/NwfTRoJcQ2rNBxA==}
-
-  '@emnapi/wasi-threads@1.1.0':
-    resolution: {integrity: sha512-WI0DdZ8xFSbgMjR1sFsKABJ/C5OnRrjT06JXbZKexJGrDuPTzZdDYfFlsgcCXCyf+suG5QU2e/y1Wo2V/OapLQ==}
 
   '@esbuild-kit/core-utils@3.3.2':
     resolution: {integrity: sha512-sPRAnw9CdSsRmEtnsl2WXWdyquogVpB3yZ3dgwJfe8zrOzTsV7cJvmwrKVa+0ma5BoiGJ+BoqkMvawbayKUsqQ==}
@@ -1854,24 +1751,6 @@ packages:
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
 
-  '@ianvs/prettier-plugin-sort-imports@4.7.0':
-    resolution: {integrity: sha512-soa2bPUJAFruLL4z/CnMfSEKGznm5ebz29fIa9PxYtu8HHyLKNE1NXAs6dylfw1jn/ilEIfO2oLLN6uAafb7DA==}
-    peerDependencies:
-      '@prettier/plugin-oxc': ^0.0.4
-      '@vue/compiler-sfc': 2.7.x || 3.x
-      content-tag: ^4.0.0
-      prettier: 2 || 3 || ^4.0.0-0
-      prettier-plugin-ember-template-tag: ^2.1.0
-    peerDependenciesMeta:
-      '@prettier/plugin-oxc':
-        optional: true
-      '@vue/compiler-sfc':
-        optional: true
-      content-tag:
-        optional: true
-      prettier-plugin-ember-template-tag:
-        optional: true
-
   '@img/colour@1.0.0':
     resolution: {integrity: sha512-A5P/LfWGFSl6nsckYtjw9da+19jB8hkJ6ACTGcDfEJ0aE+l2n2El7dsVM7UVHZQ9s2lmYMWlrS21YLy2IR1LUw==}
     engines: {node: '>=18'}
@@ -2100,9 +1979,6 @@ packages:
     resolution: {integrity: sha512-VxS+okLpNp6YUDLz3rAXv6sE8G4W5cX039bumkPub65xRr9BFxjHaT5ebX4DsiixIGaBwitjWTvx3mAbyI2EUQ==}
     engines: {node: '>=16'}
 
-  '@napi-rs/wasm-runtime@0.2.12':
-    resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
-
   '@neondatabase/serverless@0.10.0':
     resolution: {integrity: sha512-+0mjRGJFL2kGyTtWo60PxIcgv0a/X/vCu4DV2iS3tL+Rl/OrFocJoN3aNajugvgBQj624aOK7LowLijoQHWIXg==}
 
@@ -2207,104 +2083,6 @@ packages:
     resolution: {integrity: sha512-3giAOQvZiH5F9bMlMiv8+GSPMeqg0dbaeo58/0SlA9sxSqZhnUtxzX9/2FzyhS9sWQf5S0GJE0AKBrFqjpeYcg==}
     engines: {node: '>=8.0.0'}
 
-  '@oxc-parser/binding-android-arm64@0.74.0':
-    resolution: {integrity: sha512-lgq8TJq22eyfojfa2jBFy2m66ckAo7iNRYDdyn9reXYA3I6Wx7tgGWVx1JAp1lO+aUiqdqP/uPlDaETL9tqRcg==}
-    engines: {node: '>=20.0.0'}
-    cpu: [arm64]
-    os: [android]
-
-  '@oxc-parser/binding-darwin-arm64@0.74.0':
-    resolution: {integrity: sha512-xbY/io/hkARggbpYEMFX6CwFzb7f4iS6WuBoBeZtdqRWfIEi7sm/uYWXfyVeB8uqOATvJ07WRFC2upI8PSI83g==}
-    engines: {node: '>=20.0.0'}
-    cpu: [arm64]
-    os: [darwin]
-
-  '@oxc-parser/binding-darwin-x64@0.74.0':
-    resolution: {integrity: sha512-FIj2gAGtFaW0Zk+TnGyenMUoRu1ju+kJ/h71D77xc1owOItbFZFGa+4WSVck1H8rTtceeJlK+kux+vCjGFCl9Q==}
-    engines: {node: '>=20.0.0'}
-    cpu: [x64]
-    os: [darwin]
-
-  '@oxc-parser/binding-freebsd-x64@0.74.0':
-    resolution: {integrity: sha512-W1I+g5TJg0TRRMHgEWNWsTIfe782V3QuaPgZxnfPNmDMywYdtlzllzclBgaDq6qzvZCCQc/UhvNb37KWTCTj8A==}
-    engines: {node: '>=20.0.0'}
-    cpu: [x64]
-    os: [freebsd]
-
-  '@oxc-parser/binding-linux-arm-gnueabihf@0.74.0':
-    resolution: {integrity: sha512-gxqkyRGApeVI8dgvJ19SYe59XASW3uVxF1YUgkE7peW/XIg5QRAOVTFKyTjI9acYuK1MF6OJHqx30cmxmZLtiQ==}
-    engines: {node: '>=20.0.0'}
-    cpu: [arm]
-    os: [linux]
-
-  '@oxc-parser/binding-linux-arm-musleabihf@0.74.0':
-    resolution: {integrity: sha512-jpnAUP4Fa93VdPPDzxxBguJmldj/Gpz7wTXKFzpAueqBMfZsy9KNC+0qT2uZ9HGUDMzNuKw0Se3bPCpL/gfD2Q==}
-    engines: {node: '>=20.0.0'}
-    cpu: [arm]
-    os: [linux]
-
-  '@oxc-parser/binding-linux-arm64-gnu@0.74.0':
-    resolution: {integrity: sha512-fcWyM7BNfCkHqIf3kll8fJctbR/PseL4RnS2isD9Y3FFBhp4efGAzhDaxIUK5GK7kIcFh1P+puIRig8WJ6IMVQ==}
-    engines: {node: '>=20.0.0'}
-    cpu: [arm64]
-    os: [linux]
-    libc: [glibc]
-
-  '@oxc-parser/binding-linux-arm64-musl@0.74.0':
-    resolution: {integrity: sha512-AMY30z/C77HgiRRJX7YtVUaelKq1ex0aaj28XoJu4SCezdS8i0IftUNTtGS1UzGjGZB8zQz5SFwVy4dRu4GLwg==}
-    engines: {node: '>=20.0.0'}
-    cpu: [arm64]
-    os: [linux]
-    libc: [musl]
-
-  '@oxc-parser/binding-linux-riscv64-gnu@0.74.0':
-    resolution: {integrity: sha512-/RZAP24TgZo4vV/01TBlzRqs0R7E6xvatww4LnmZEBBulQBU/SkypDywfriFqWuFoa61WFXPV7sLcTjJGjim/w==}
-    engines: {node: '>=20.0.0'}
-    cpu: [riscv64]
-    os: [linux]
-    libc: [glibc]
-
-  '@oxc-parser/binding-linux-s390x-gnu@0.74.0':
-    resolution: {integrity: sha512-620J1beNAlGSPBD+Msb3ptvrwxu04B8iULCH03zlf0JSLy/5sqlD6qBs0XUVkUJv1vbakUw1gfVnUQqv0UTuEg==}
-    engines: {node: '>=20.0.0'}
-    cpu: [s390x]
-    os: [linux]
-    libc: [glibc]
-
-  '@oxc-parser/binding-linux-x64-gnu@0.74.0':
-    resolution: {integrity: sha512-WBFgQmGtFnPNzHyLKbC1wkYGaRIBxXGofO0+hz1xrrkPgbxbJS1Ukva1EB8sPaVBBQ52Bdc2GjLSp721NWRvww==}
-    engines: {node: '>=20.0.0'}
-    cpu: [x64]
-    os: [linux]
-    libc: [glibc]
-
-  '@oxc-parser/binding-linux-x64-musl@0.74.0':
-    resolution: {integrity: sha512-y4mapxi0RGqlp3t6Sm+knJlAEqdKDYrEue2LlXOka/F2i4sRN0XhEMPiSOB3ppHmvK4I2zY2XBYTsX1Fel0fAg==}
-    engines: {node: '>=20.0.0'}
-    cpu: [x64]
-    os: [linux]
-    libc: [musl]
-
-  '@oxc-parser/binding-wasm32-wasi@0.74.0':
-    resolution: {integrity: sha512-yDS9bRDh5ymobiS2xBmjlrGdUuU61IZoJBaJC5fELdYT5LJNBXlbr3Yc6m2PWfRJwkH6Aq5fRvxAZ4wCbkGa8w==}
-    engines: {node: '>=14.0.0'}
-    cpu: [wasm32]
-
-  '@oxc-parser/binding-win32-arm64-msvc@0.74.0':
-    resolution: {integrity: sha512-XFWY52Rfb4N5wEbMCTSBMxRkDLGbAI9CBSL24BIDywwDJMl31gHEVlmHdCDRoXAmanCI6gwbXYTrWe0HvXJ7Aw==}
-    engines: {node: '>=20.0.0'}
-    cpu: [arm64]
-    os: [win32]
-
-  '@oxc-parser/binding-win32-x64-msvc@0.74.0':
-    resolution: {integrity: sha512-1D3x6iU2apLyfTQHygbdaNbX3nZaHu4yaXpD7ilYpoLo7f0MX0tUuoDrqJyJrVGqvyXgc0uz4yXz9tH9ZZhvvg==}
-    engines: {node: '>=20.0.0'}
-    cpu: [x64]
-    os: [win32]
-
-  '@oxc-project/types@0.74.0':
-    resolution: {integrity: sha512-KOw/RZrVlHGhCXh1RufBFF7Nuo7HdY5w1lRJukM/igIl6x9qtz8QycDvZdzb4qnHO7znrPyo2sJrFJK2eKHgfQ==}
-
   '@peculiar/asn1-android@2.4.0':
     resolution: {integrity: sha512-YFueREq97CLslZZBI8dKzis7jMfEHSLxM+nr0Zdx1POiXFLjqqwoY5s0F1UimdBiEw/iKlHey2m56MRDv7Jtyg==}
 
@@ -2330,10 +2108,6 @@ packages:
   '@planetscale/database@1.19.0':
     resolution: {integrity: sha512-Tv4jcFUFAFjOWrGSio49H6R2ijALv0ZzVBfJKIdm+kl9X046Fh4LLawrF9OMsglVbK6ukqMJsUCeucGAFTBcMA==}
     engines: {node: '>=16'}
-
-  '@prettier/plugin-oxc@0.0.4':
-    resolution: {integrity: sha512-UGXe+g/rSRbglL0FOJiar+a+nUrst7KaFmsg05wYbKiInGWP6eAj/f8A2Uobgo5KxEtb2X10zeflNH6RK2xeIQ==}
-    engines: {node: '>=14'}
 
   '@prisma/client@5.22.0':
     resolution: {integrity: sha512-M0SVXfyHnQREBKxCgyo7sffrKttwE6R8PMq330MIUF0pTwjUhLbW84pFDlf06B27XyCR++VtjugEnIHdr07SVA==}
@@ -3691,9 +3465,6 @@ packages:
     resolution: {integrity: sha512-EE/27azLteK24It0B0IrjA7yWFC6jYZoTTUzL7R7HgiN0BWBPrTp6Ugpn0iE6+Bn9fFcjSp/IBBG8D8c7vXD1g==}
     hasBin: true
 
-  '@tybys/wasm-util@0.10.1':
-    resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==}
-
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
 
@@ -3854,21 +3625,6 @@ packages:
     resolution: {integrity: sha512-fSD23DxGND40IzSkXjcFcxr53t3Tiym59Is0jSYIFpG4/0f0KO9SGtcp1sXiebvPaGe7N/tU05cH4yt2S6/IPg==}
     engines: {node: '>=18.14'}
     deprecated: '@vercel/postgres is deprecated. If you are setting up a new database, you can choose an alternate storage solution from the Vercel Marketplace. If you had an existing Vercel Postgres database, it should have been migrated to Neon as a native Vercel integration. You can find more details and the guide to migrate to Neon''s SDKs here: https://neon.com/docs/guides/vercel-postgres-transition-guide'
-
-  '@vue/compiler-core@3.5.16':
-    resolution: {integrity: sha512-AOQS2eaQOaaZQoL1u+2rCJIKDruNXVBZSiUD3chnUrsoX5ZTQMaCvXlWNIfxBJuU15r1o7+mpo5223KVtIhAgQ==}
-
-  '@vue/compiler-dom@3.5.16':
-    resolution: {integrity: sha512-SSJIhBr/teipXiXjmWOVWLnxjNGo65Oj/8wTEQz0nqwQeP75jWZ0n4sF24Zxoht1cuJoWopwj0J0exYwCJ0dCQ==}
-
-  '@vue/compiler-sfc@3.5.16':
-    resolution: {integrity: sha512-rQR6VSFNpiinDy/DVUE0vHoIDUF++6p910cgcZoaAUm3POxgNOOdS/xgoll3rNdKYTYPnnbARDCZOyZ+QSe6Pw==}
-
-  '@vue/compiler-ssr@3.5.16':
-    resolution: {integrity: sha512-d2V7kfxbdsjrDSGlJE7my1ZzCXViEcqN6w14DOsDrUCHEA6vbnVCpRFfrc4ryCP/lCKzX2eS1YtnLE/BuC9f/A==}
-
-  '@vue/shared@3.5.16':
-    resolution: {integrity: sha512-c/0fWy3Jw6Z8L9FmTyYfkpM5zklnqqa9+a6dz3DvONRKW2NEbh46BP0FHuLFSWi2TnQEtp91Z6zOWNrU6QiyPg==}
 
   '@xmldom/xmldom@0.8.10':
     resolution: {integrity: sha512-2WALfTl4xo2SkGCYRt6rDTFfk9R1czmBvUQy12gK2KuRKIpWEhcbbzy8EZXtz/jkRqHX8bFEc6FC1HjX4TUWYw==}
@@ -4147,6 +3903,7 @@ packages:
   basic-ftp@5.0.5:
     resolution: {integrity: sha512-4Bcg1P8xhUuqcii/S0Z9wiHIrQVPMermM1any+MX5GeGD7faD3/msQUDGLol9wOcz4/jbg/WJnGqoJF6LiBdtg==}
     engines: {node: '>=10.0.0'}
+    deprecated: Security vulnerability fixed in 5.2.0, please upgrade
 
   better-auth@1.4.0-beta.9:
     resolution: {integrity: sha512-JmVvaC/VCtFtI/sUGkoaLnzV/nnMn13XR6Vrkf4zGxah6g38S0GPvD7iZlBHehTN6Fb5aUwWPKgqFowxyOm2xw==}
@@ -4470,9 +4227,6 @@ packages:
 
   constant-case@2.0.0:
     resolution: {integrity: sha512-eS0N9WwmjTqrOmR3o83F5vW8Z+9R1HnVz3xmzT2PMFug9ly+Au/fxRWlEBSb6LcZwspSsEn9Xs1uw9YgzAg1EQ==}
-
-  content-tag@4.0.0:
-    resolution: {integrity: sha512-qqJiY9nueYAI396MOmfOk+w/0KL6ERKxANQcSKcR0CrNTc38yT//b73l+WHr9brZx57bFHNaW7a/6Yll0bn95w==}
 
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
@@ -5154,9 +4908,6 @@ packages:
   estraverse@5.3.0:
     resolution: {integrity: sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA==}
     engines: {node: '>=4.0'}
-
-  estree-walker@2.0.2:
-    resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
 
   esutils@2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
@@ -6704,10 +6455,6 @@ packages:
     resolution: {integrity: sha512-qFOyK5PjiWZd+QQIh+1jhdb9LpxTF0qs7Pm8o5QHYZ0M3vKqSqzsZaEB6oWlxZ+q2sJBMI/Ktgd2N5ZwQoRHfg==}
     engines: {node: '>= 0.4'}
 
-  oxc-parser@0.74.0:
-    resolution: {integrity: sha512-2tDN/ttU8WE6oFh8EzKNam7KE7ZXSG5uXmvX85iNzxdJfMssDWcj3gpYzZi1E04XuE7m3v1dVWl/8BE886vPGw==}
-    engines: {node: '>=20.0.0'}
-
   p-limit@2.3.0:
     resolution: {integrity: sha512-//88mFWSJx8lxCzwdAABTJL2MyWB12+eIY7MDL2SqLmAkeKU9qxRvWuSyTjm3FUmpBEMuFfckAIqEaVGUDxb6w==}
     engines: {node: '>=6'}
@@ -6948,67 +6695,6 @@ packages:
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
-
-  prettier-plugin-ember-template-tag@2.1.0:
-    resolution: {integrity: sha512-Ium+m2zHSZKzRFt1Shn+sv8j1BzfFWP3E0tZeKTKP1U7v/tMyLuQNBRyRCJ7REdKc9bWkIJG/hCSf0CKqCVU1w==}
-    engines: {node: 18.* || >= 20}
-    peerDependencies:
-      prettier: '>= 3.0.0'
-
-  prettier-plugin-tailwindcss@0.7.1:
-    resolution: {integrity: sha512-Bzv1LZcuiR1Sk02iJTS1QzlFNp/o5l2p3xkopwOrbPmtMeh3fK9rVW5M3neBQzHq+kGKj/4LGQMTNcTH4NGPtQ==}
-    engines: {node: '>=20.19'}
-    peerDependencies:
-      '@ianvs/prettier-plugin-sort-imports': '*'
-      '@prettier/plugin-hermes': '*'
-      '@prettier/plugin-oxc': '*'
-      '@prettier/plugin-pug': '*'
-      '@shopify/prettier-plugin-liquid': '*'
-      '@trivago/prettier-plugin-sort-imports': '*'
-      '@zackad/prettier-plugin-twig': '*'
-      prettier: ^3.0
-      prettier-plugin-astro: '*'
-      prettier-plugin-css-order: '*'
-      prettier-plugin-jsdoc: '*'
-      prettier-plugin-marko: '*'
-      prettier-plugin-multiline-arrays: '*'
-      prettier-plugin-organize-attributes: '*'
-      prettier-plugin-organize-imports: '*'
-      prettier-plugin-sort-imports: '*'
-      prettier-plugin-svelte: '*'
-    peerDependenciesMeta:
-      '@ianvs/prettier-plugin-sort-imports':
-        optional: true
-      '@prettier/plugin-hermes':
-        optional: true
-      '@prettier/plugin-oxc':
-        optional: true
-      '@prettier/plugin-pug':
-        optional: true
-      '@shopify/prettier-plugin-liquid':
-        optional: true
-      '@trivago/prettier-plugin-sort-imports':
-        optional: true
-      '@zackad/prettier-plugin-twig':
-        optional: true
-      prettier-plugin-astro:
-        optional: true
-      prettier-plugin-css-order:
-        optional: true
-      prettier-plugin-jsdoc:
-        optional: true
-      prettier-plugin-marko:
-        optional: true
-      prettier-plugin-multiline-arrays:
-        optional: true
-      prettier-plugin-organize-attributes:
-        optional: true
-      prettier-plugin-organize-imports:
-        optional: true
-      prettier-plugin-sort-imports:
-        optional: true
-      prettier-plugin-svelte:
-        optional: true
 
   prettier@3.6.2:
     resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
@@ -9269,18 +8955,7 @@ snapshots:
     dependencies:
       '@types/hammerjs': 2.0.46
 
-  '@emnapi/core@1.6.0':
-    dependencies:
-      '@emnapi/wasi-threads': 1.1.0
-      tslib: 2.8.1
-    optional: true
-
   '@emnapi/runtime@1.6.0':
-    dependencies:
-      tslib: 2.8.1
-    optional: true
-
-  '@emnapi/wasi-threads@1.1.0':
     dependencies:
       tslib: 2.8.1
     optional: true
@@ -9860,7 +9535,7 @@ snapshots:
       metro-babel-transformer: 0.83.2
       metro-cache: 0.83.2
       metro-cache-key: 0.83.2
-      metro-config: 0.83.2(bufferutil@4.0.8)(utf-8-validate@6.0.4)
+      metro-config: 0.83.2(bufferutil@4.0.8)
       metro-core: 0.83.2
       metro-file-map: 0.83.2
       metro-resolver: 0.83.2
@@ -9921,7 +9596,7 @@ snapshots:
       '@expo/json-file': 10.0.7
       '@react-native/normalize-colors': 0.81.5
       debug: 4.4.3
-      expo: 54.0.20(@babel/core@7.28.5)(@expo/metro-runtime@6.1.1)(bufferutil@4.0.8)(expo-router@6.0.13)(graphql@15.8.0)(react-native@0.82.0(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4)(utf-8-validate@6.0.4))(react@19.1.4)(utf-8-validate@6.0.4)
+      expo: 54.0.20(@babel/core@7.28.5)(@expo/metro-runtime@6.1.1)(bufferutil@4.0.8)(expo-router@6.0.13)(graphql@15.8.0)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4))(react@19.1.4)
       resolve-from: 5.0.0
       semver: 7.7.3
       xml2js: 0.6.0
@@ -9988,22 +9663,6 @@ snapshots:
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/retry@0.4.3': {}
-
-  '@ianvs/prettier-plugin-sort-imports@4.7.0(@prettier/plugin-oxc@0.0.4)(@vue/compiler-sfc@3.5.16)(content-tag@4.0.0)(prettier-plugin-ember-template-tag@2.1.0(prettier@3.6.2))(prettier@3.6.2)':
-    dependencies:
-      '@babel/generator': 7.28.5
-      '@babel/parser': 7.28.5
-      '@babel/traverse': 7.28.5
-      '@babel/types': 7.28.5
-      prettier: 3.6.2
-      semver: 7.7.3
-    optionalDependencies:
-      '@prettier/plugin-oxc': 0.0.4
-      '@vue/compiler-sfc': 3.5.16
-      content-tag: 4.0.0
-      prettier-plugin-ember-template-tag: 2.1.0(prettier@3.6.2)
-    transitivePeerDependencies:
-      - supports-color
 
   '@img/colour@1.0.0':
     optional: true
@@ -10221,13 +9880,6 @@ snapshots:
       chevrotain: 10.5.0
       lilconfig: 2.1.0
 
-  '@napi-rs/wasm-runtime@0.2.12':
-    dependencies:
-      '@emnapi/core': 1.6.0
-      '@emnapi/runtime': 1.6.0
-      '@tybys/wasm-util': 0.10.1
-    optional: true
-
   '@neondatabase/serverless@0.10.0':
     dependencies:
       '@types/pg': 8.11.6
@@ -10308,56 +9960,6 @@ snapshots:
   '@opentelemetry/api@1.9.0':
     optional: true
 
-  '@oxc-parser/binding-android-arm64@0.74.0':
-    optional: true
-
-  '@oxc-parser/binding-darwin-arm64@0.74.0':
-    optional: true
-
-  '@oxc-parser/binding-darwin-x64@0.74.0':
-    optional: true
-
-  '@oxc-parser/binding-freebsd-x64@0.74.0':
-    optional: true
-
-  '@oxc-parser/binding-linux-arm-gnueabihf@0.74.0':
-    optional: true
-
-  '@oxc-parser/binding-linux-arm-musleabihf@0.74.0':
-    optional: true
-
-  '@oxc-parser/binding-linux-arm64-gnu@0.74.0':
-    optional: true
-
-  '@oxc-parser/binding-linux-arm64-musl@0.74.0':
-    optional: true
-
-  '@oxc-parser/binding-linux-riscv64-gnu@0.74.0':
-    optional: true
-
-  '@oxc-parser/binding-linux-s390x-gnu@0.74.0':
-    optional: true
-
-  '@oxc-parser/binding-linux-x64-gnu@0.74.0':
-    optional: true
-
-  '@oxc-parser/binding-linux-x64-musl@0.74.0':
-    optional: true
-
-  '@oxc-parser/binding-wasm32-wasi@0.74.0':
-    dependencies:
-      '@napi-rs/wasm-runtime': 0.2.12
-    optional: true
-
-  '@oxc-parser/binding-win32-arm64-msvc@0.74.0':
-    optional: true
-
-  '@oxc-parser/binding-win32-x64-msvc@0.74.0':
-    optional: true
-
-  '@oxc-project/types@0.74.0':
-    optional: true
-
   '@peculiar/asn1-android@2.4.0':
     dependencies:
       '@peculiar/asn1-schema': 2.4.0
@@ -10398,11 +10000,6 @@ snapshots:
     optional: true
 
   '@planetscale/database@1.19.0':
-    optional: true
-
-  '@prettier/plugin-oxc@0.0.4':
-    dependencies:
-      oxc-parser: 0.74.0
     optional: true
 
   '@prisma/client@5.22.0(prisma@5.22.0)':
@@ -11276,7 +10873,7 @@ snapshots:
       debug: 4.4.3
       invariant: 2.2.4
       metro: 0.83.3(bufferutil@4.0.8)
-      metro-config: 0.83.3(bufferutil@4.0.8)(utf-8-validate@6.0.4)
+      metro-config: 0.83.3(bufferutil@4.0.8)
       metro-core: 0.83.3
       semver: 7.7.3
     transitivePeerDependencies:
@@ -12000,11 +11597,6 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@tybys/wasm-util@0.10.1':
-    dependencies:
-      tslib: 2.8.1
-    optional: true
-
   '@types/babel__core@7.20.5':
     dependencies:
       '@babel/parser': 7.28.5
@@ -12229,43 +11821,6 @@ snapshots:
       - utf-8-validate
     optional: true
 
-  '@vue/compiler-core@3.5.16':
-    dependencies:
-      '@babel/parser': 7.28.5
-      '@vue/shared': 3.5.16
-      entities: 4.5.0
-      estree-walker: 2.0.2
-      source-map-js: 1.2.1
-    optional: true
-
-  '@vue/compiler-dom@3.5.16':
-    dependencies:
-      '@vue/compiler-core': 3.5.16
-      '@vue/shared': 3.5.16
-    optional: true
-
-  '@vue/compiler-sfc@3.5.16':
-    dependencies:
-      '@babel/parser': 7.28.5
-      '@vue/compiler-core': 3.5.16
-      '@vue/compiler-dom': 3.5.16
-      '@vue/compiler-ssr': 3.5.16
-      '@vue/shared': 3.5.16
-      estree-walker: 2.0.2
-      magic-string: 0.30.21
-      postcss: 8.5.6
-      source-map-js: 1.2.1
-    optional: true
-
-  '@vue/compiler-ssr@3.5.16':
-    dependencies:
-      '@vue/compiler-dom': 3.5.16
-      '@vue/shared': 3.5.16
-    optional: true
-
-  '@vue/shared@3.5.16':
-    optional: true
-
   '@xmldom/xmldom@0.8.10': {}
 
   abort-controller@3.0.0:
@@ -12283,12 +11838,11 @@ snapshots:
 
   acorn-walk@8.3.4:
     dependencies:
-      acorn: 8.15.0
+      acorn: 8.16.0
 
   acorn@8.15.0: {}
 
-  acorn@8.16.0:
-    optional: true
+  acorn@8.16.0: {}
 
   agent-base@7.1.4: {}
 
@@ -12599,7 +12153,7 @@ snapshots:
       resolve-from: 5.0.0
     optionalDependencies:
       '@babel/runtime': 7.28.4
-      expo: 54.0.20(@babel/core@7.28.5)(@expo/metro-runtime@6.1.1)(bufferutil@4.0.8)(expo-router@6.0.13)(graphql@15.8.0)(react-native@0.82.0(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4)(utf-8-validate@6.0.4))(react@19.1.4)(utf-8-validate@6.0.4)
+      expo: 54.0.20(@babel/core@7.28.5)(@expo/metro-runtime@6.1.1)(bufferutil@4.0.8)(expo-router@6.0.13)(graphql@15.8.0)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4))(react@19.1.4)
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
@@ -13007,9 +12561,6 @@ snapshots:
     dependencies:
       snake-case: 2.1.0
       upper-case: 1.1.3
-
-  content-tag@4.0.0:
-    optional: true
 
   convert-source-map@2.0.0: {}
 
@@ -13749,9 +13300,6 @@ snapshots:
 
   estraverse@5.3.0: {}
 
-  estree-walker@2.0.2:
-    optional: true
-
   esutils@2.0.3: {}
 
   etag@1.8.1: {}
@@ -13815,7 +13363,7 @@ snapshots:
   expo-crypto@15.0.7(expo@54.0.20):
     dependencies:
       base64-js: 1.5.1
-      expo: 54.0.20(@babel/core@7.28.5)(@expo/metro-runtime@6.1.1)(bufferutil@4.0.8)(expo-router@6.0.13)(graphql@15.8.0)(react-native@0.82.0(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4)(utf-8-validate@6.0.4))(react@19.1.4)(utf-8-validate@6.0.4)
+      expo: 54.0.20(@babel/core@7.28.5)(@expo/metro-runtime@6.1.1)(bufferutil@4.0.8)(expo-router@6.0.13)(graphql@15.8.0)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4))(react@19.1.4)
 
   expo-dev-client@6.0.16(expo@54.0.20):
     dependencies:
@@ -13873,7 +13421,7 @@ snapshots:
 
   expo-keep-awake@15.0.7(expo@54.0.20)(react@19.1.4):
     dependencies:
-      expo: 54.0.20(@babel/core@7.28.5)(@expo/metro-runtime@6.1.1)(bufferutil@4.0.8)(expo-router@6.0.13)(graphql@15.8.0)(react-native@0.82.0(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4)(utf-8-validate@6.0.4))(react@19.1.4)(utf-8-validate@6.0.4)
+      expo: 54.0.20(@babel/core@7.28.5)(@expo/metro-runtime@6.1.1)(bufferutil@4.0.8)(expo-router@6.0.13)(graphql@15.8.0)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4))(react@19.1.4)
       react: 19.1.4
 
   expo-linking@8.0.8(expo@54.0.20)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4))(react@19.1.4):
@@ -14014,7 +13562,7 @@ snapshots:
 
   expo-secure-store@15.0.7(expo@54.0.20):
     dependencies:
-      expo: 54.0.20(@babel/core@7.28.5)(@expo/metro-runtime@6.1.1)(bufferutil@4.0.8)(expo-router@6.0.13)(graphql@15.8.0)(react-native@0.82.0(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4)(utf-8-validate@6.0.4))(react@19.1.4)(utf-8-validate@6.0.4)
+      expo: 54.0.20(@babel/core@7.28.5)(@expo/metro-runtime@6.1.1)(bufferutil@4.0.8)(expo-router@6.0.13)(graphql@15.8.0)(react-native@0.81.5(@babel/core@7.28.5)(@types/react@19.1.12)(bufferutil@4.0.8)(react@19.1.4))(react@19.1.4)
 
   expo-server@1.0.2: {}
 
@@ -15138,6 +14686,21 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  metro-config@0.83.2(bufferutil@4.0.8):
+    dependencies:
+      connect: 3.7.0
+      flow-enums-runtime: 0.0.6
+      jest-validate: 29.7.0
+      metro: 0.83.2(bufferutil@4.0.8)
+      metro-cache: 0.83.2
+      metro-core: 0.83.2
+      metro-runtime: 0.83.2
+      yaml: 2.8.1
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
   metro-config@0.83.2(bufferutil@4.0.8)(utf-8-validate@6.0.4):
     dependencies:
       connect: 3.7.0
@@ -15147,6 +14710,21 @@ snapshots:
       metro-cache: 0.83.2
       metro-core: 0.83.2
       metro-runtime: 0.83.2
+      yaml: 2.8.1
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
+  metro-config@0.83.3(bufferutil@4.0.8):
+    dependencies:
+      connect: 3.7.0
+      flow-enums-runtime: 0.0.6
+      jest-validate: 29.7.0
+      metro: 0.83.3(bufferutil@4.0.8)
+      metro-cache: 0.83.3
+      metro-core: 0.83.3
+      metro-runtime: 0.83.3
       yaml: 2.8.1
     transitivePeerDependencies:
       - bufferutil
@@ -15416,7 +14994,7 @@ snapshots:
       metro-babel-transformer: 0.83.2
       metro-cache: 0.83.2
       metro-cache-key: 0.83.2
-      metro-config: 0.83.2(bufferutil@4.0.8)(utf-8-validate@6.0.4)
+      metro-config: 0.83.2(bufferutil@4.0.8)
       metro-core: 0.83.2
       metro-file-map: 0.83.2
       metro-resolver: 0.83.2
@@ -15510,7 +15088,7 @@ snapshots:
       metro-babel-transformer: 0.83.3
       metro-cache: 0.83.3
       metro-cache-key: 0.83.3
-      metro-config: 0.83.3(bufferutil@4.0.8)(utf-8-validate@6.0.4)
+      metro-config: 0.83.3(bufferutil@4.0.8)
       metro-core: 0.83.3
       metro-file-map: 0.83.3
       metro-resolver: 0.83.3
@@ -15913,27 +15491,6 @@ snapshots:
       object-keys: 1.1.1
       safe-push-apply: 1.0.0
 
-  oxc-parser@0.74.0:
-    dependencies:
-      '@oxc-project/types': 0.74.0
-    optionalDependencies:
-      '@oxc-parser/binding-android-arm64': 0.74.0
-      '@oxc-parser/binding-darwin-arm64': 0.74.0
-      '@oxc-parser/binding-darwin-x64': 0.74.0
-      '@oxc-parser/binding-freebsd-x64': 0.74.0
-      '@oxc-parser/binding-linux-arm-gnueabihf': 0.74.0
-      '@oxc-parser/binding-linux-arm-musleabihf': 0.74.0
-      '@oxc-parser/binding-linux-arm64-gnu': 0.74.0
-      '@oxc-parser/binding-linux-arm64-musl': 0.74.0
-      '@oxc-parser/binding-linux-riscv64-gnu': 0.74.0
-      '@oxc-parser/binding-linux-s390x-gnu': 0.74.0
-      '@oxc-parser/binding-linux-x64-gnu': 0.74.0
-      '@oxc-parser/binding-linux-x64-musl': 0.74.0
-      '@oxc-parser/binding-wasm32-wasi': 0.74.0
-      '@oxc-parser/binding-win32-arm64-msvc': 0.74.0
-      '@oxc-parser/binding-win32-x64-msvc': 0.74.0
-    optional: true
-
   p-limit@2.3.0:
     dependencies:
       p-try: 2.2.0
@@ -16173,22 +15730,6 @@ snapshots:
       tunnel-agent: 0.6.0
 
   prelude-ls@1.2.1: {}
-
-  prettier-plugin-ember-template-tag@2.1.0(prettier@3.6.2):
-    dependencies:
-      '@babel/core': 7.28.5
-      content-tag: 4.0.0
-      prettier: 3.6.2
-    transitivePeerDependencies:
-      - supports-color
-    optional: true
-
-  prettier-plugin-tailwindcss@0.7.1(@ianvs/prettier-plugin-sort-imports@4.7.0(@prettier/plugin-oxc@0.0.4)(@vue/compiler-sfc@3.5.16)(content-tag@4.0.0)(prettier-plugin-ember-template-tag@2.1.0(prettier@3.6.2))(prettier@3.6.2))(@prettier/plugin-oxc@0.0.4)(prettier@3.6.2):
-    dependencies:
-      prettier: 3.6.2
-    optionalDependencies:
-      '@ianvs/prettier-plugin-sort-imports': 4.7.0(@prettier/plugin-oxc@0.0.4)(@vue/compiler-sfc@3.5.16)(content-tag@4.0.0)(prettier-plugin-ember-template-tag@2.1.0(prettier@3.6.2))(prettier@3.6.2)
-      '@prettier/plugin-oxc': 0.0.4
 
   prettier@3.6.2: {}
 
@@ -17428,7 +16969,7 @@ snapshots:
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
       '@types/node': 24.9.1
-      acorn: 8.15.0
+      acorn: 8.16.0
       acorn-walk: 8.3.4
       arg: 4.1.3
       create-require: 1.1.1

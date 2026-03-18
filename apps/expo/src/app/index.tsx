@@ -1,6 +1,6 @@
+import { Stack } from "expo-router";
 import { Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Stack } from "expo-router";
 import { authClient } from "~/utils/auth";
 
 function MobileAuth() {

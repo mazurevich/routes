@@ -9,7 +9,7 @@
     "dev:ios": "expo start --ios",
     "android": "ANDROID_HOME=${ANDROID_HOME:-$HOME/Android/Sdk} ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-$HOME/Android/Sdk} expo run:android",
     "ios": "expo run:ios",
-    "format": "prettier --check . --ignore-path ../../.gitignore --ignore-path .prettierignore",
+    "format": "biome format .",
     "lint": "eslint --flag unstable_native_nodejs_ts_config",
     "lint:eslint": "eslint --flag unstable_native_nodejs_ts_config \"src/**/*.{js,jsx,ts,tsx}\"",
     "typecheck": "tsc --noEmit"
@@ -50,14 +50,11 @@
   "devDependencies": {
     "@acme/api": "workspace:*",
     "@acme/eslint-config": "workspace:*",
-    "@acme/prettier-config": "workspace:*",
     "@acme/tailwind-config": "workspace:*",
     "@acme/tsconfig": "workspace:*",
     "@types/react": "catalog:react19",
     "eslint": "catalog:",
-    "prettier": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
-  },
-  "prettier": "@acme/prettier-config"
+  }
 }

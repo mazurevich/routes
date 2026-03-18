@@ -105,23 +105,56 @@ const ThemeContext = React.createContext<ThemeContextProps | undefined>(
   undefined,
 );
 
-export function ThemeProvider({ children }: React.PropsWithChildren) {
-  const [themeMode, setThemeMode] = React.useState(getStoredThemeMode);
+interface ThemeProviderProps {
+  forceLight?: boolean;
+}
+
+export function ThemeProvider({
+  children,
+  forceLight = false,
+}: React.PropsWithChildren<ThemeProviderProps>) {
+  const [themeMode, setThemeMode] = React.useState<ThemeMode>(
+    forceLight ? "light" : getStoredThemeMode(),
+  );
 
   React.useEffect(() => {
+    if (forceLight) {
+      updateThemeClass("light");
+      setStoredThemeMode("light");
+      if (themeMode !== "light") {
+        setThemeMode("light");
+      }
+      return;
+    }
+
     if (themeMode !== "auto") return;
     return setupPreferredListener();
-  }, [themeMode]);
+  }, [forceLight, themeMode]);
 
-  const resolvedTheme = themeMode === "auto" ? getSystemTheme() : themeMode;
+  const resolvedTheme = forceLight
+    ? "light"
+    : themeMode === "auto"
+      ? getSystemTheme()
+      : themeMode;
 
   const setTheme = (newTheme: ThemeMode) => {
+    if (forceLight) {
+      setThemeMode("light");
+      setStoredThemeMode("light");
+      updateThemeClass("light");
+      return;
+    }
+
     setThemeMode(newTheme);
     setStoredThemeMode(newTheme);
     updateThemeClass(newTheme);
   };
 
   const toggleMode = () => {
+    if (forceLight) {
+      setTheme("light");
+      return;
+    }
     setTheme(getNextTheme(themeMode));
   };
 
@@ -134,10 +167,12 @@ export function ThemeProvider({ children }: React.PropsWithChildren) {
         toggleMode,
       }}
     >
-      <script
-        dangerouslySetInnerHTML={{ __html: themeDetectorScript }}
-        suppressHydrationWarning
-      />
+      {!forceLight && (
+        <script
+          dangerouslySetInnerHTML={{ __html: themeDetectorScript }}
+          suppressHydrationWarning
+        />
+      )}
       {children}
     </ThemeContext>
   );
